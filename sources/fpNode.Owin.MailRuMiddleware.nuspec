@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/fpNode/Owin.MailRuMiddleware</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Owin Middleware module for site mail.ru. Working fine with mvc 5.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Owin Middleware mail.ru</tags>
+  </metadata>
+</package>
