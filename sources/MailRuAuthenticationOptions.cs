@@ -17,14 +17,15 @@ namespace fpNode.Owin.MailRuMiddleware
     [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "MailRuMiddleware.MailRuAuthenticationOptions.set_Caption(System.String)", Justification = "Not localizable.")]
     public class MailRuAuthenticationOptions : AuthenticationOptions
     {
-        public const string DefaultAuthenticationType = "MailRu";
+        public const string DefaultCaption = "MailRu";
 
         /// <summary>
         /// Initializes a new <see cref="MailRuAuthenticationOptions"/>
         /// </summary>
         public MailRuAuthenticationOptions()
-            : base("MailRu")
+            : base(DefaultCaption)
         {
+            Caption = DefaultCaption;
             CallbackPath = new PathString("/signin-mailru");
             AuthenticationMode = AuthenticationMode.Passive;
             Scope = "";
@@ -66,6 +67,15 @@ namespace fpNode.Owin.MailRuMiddleware
         /// can be downcast to a WebRequestHandler.
         /// </summary>
         public HttpMessageHandler BackchannelHttpHandler { get; set; }
+
+        /// <summary>
+        /// Get or sets the text that the user can display on a sign in user interface.
+        /// </summary>
+        public string Caption
+        {
+            get { return Description.Caption; }
+            set { Description.Caption = value; }
+        }
 
         /// <summary>
         /// The request path within the application's base path where the user-agent will be returned.
