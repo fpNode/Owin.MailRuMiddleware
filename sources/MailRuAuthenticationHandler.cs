@@ -196,7 +196,8 @@ namespace fpNode.Owin.MailRuMiddleware
                     new KeyValuePair<string, string>("redirect_uri", redirectUri)
                 });
 
-                _httpClient.BaseAddress = new Uri(TokenEndpoint);
+                if (_httpClient.BaseAddress == null)
+                    _httpClient.BaseAddress = new Uri(TokenEndpoint);
                 HttpResponseMessage tokenResponse = await _httpClient.PostAsync("/oauth/token", content, Request.CallCancelled);
                 tokenResponse.EnsureSuccessStatusCode();
                 string text = await tokenResponse.Content.ReadAsStringAsync();
